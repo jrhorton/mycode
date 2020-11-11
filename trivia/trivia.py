@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-print("Welcome to Video Game Trivia!")
-print("You will be asked a series of 10 multiple choice questions. The number of correct answers you get will decide how much of a video game historian you are")
+print("Welcome to Video Game Trivia!\n")
+print("You will be asked a series of 10 multiple choice questions.\nThe number of correct answers you get will decide how much of a video game historian you are.\n")
 
 ready = " "
 
