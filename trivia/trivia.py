@@ -20,7 +20,7 @@ while True:
     question = 1
     answer1 = " "
     while answer1 not in answers:
-        answer1 = input(f"Question: {question}\nWhat is the best selling videogame of all time?\nA: Mario Kart\nB: Battle Toads\nC: Minecraft\nD: Skyrim\n").upper()
+        answer1 = input(f"\nQuestion: {question}\nWhat is the best selling videogame of all time?\nA: Mario Kart\nB: Battle Toads\nC: Minecraft\nD: Skyrim\n").upper()
 
         if answer1 == "C":
             print("Correct!")
@@ -128,7 +128,7 @@ while True:
         
     answer7 = " "
     while answer7 not in answers:
-        answer7 = input(f"Question: {question}\nBlizzard Entertainment is most well known for what video game franchise??\nA: Overwatch\nB: World of Warcraft\nC: Diablo\nD: Starcraft\n").upper()
+        answer7 = input(f"Question: {question}\nBlizzard Entertainment is most well known for what video game franchise?\nA: Overwatch\nB: World of Warcraft\nC: Diablo\nD: Starcraft\n").upper()
 
         if answer7 == "B":
             print("Correct!")
@@ -205,7 +205,7 @@ while True:
     elif score >= 6:
         print(f"Pretty good job getting {score} out of 10. You've obviously played some games over the years.")
     elif score >= 4:
-        print(f"Well.. you scored {score} out of 10. Not terrible, but definitely not a ""GG"".")
+        print(f"Well.. you scored {score} out of 10. Not terrible, but definitely not a \"GG\".")
     elif score >= 2:
         print(f"Seriously?!?! {score} out of 10? That's it? Go back to Hello Kitty Online, noob")
     else:
