@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+print("Welcome to the handy dandy calculator")
+
 def add(num1,num2):
     return(num1+num2)
 
