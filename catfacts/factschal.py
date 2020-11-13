@@ -5,6 +5,8 @@
 # imports always go at the top of your code
 import requests
 import random
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 r = requests.get('https://cat-fact.herokuapp.com/facts',verify=False)
 
