@@ -1,19 +1,49 @@
+
 #!/usr/bin/env python3
-"""Alta3 Research | Author: RZFeeser@alta3.com"""
+"""Alta3 Research | Author: csfeeser@alta3.com"""
 
 # imports always go at the top of your code
 import requests
+import random
 
-def main():
-    """Run time code"""
-    ## create r, which is our request object
-    r = requests.get('https://cat-fact.herokuapp.com/facts', verify=False)
+r = requests.get('https://cat-fact.herokuapp.com/facts',verify=False)
 
-    ## catfact is our iterable -- that just means it will take on the values found within
-    ## r.json()["all"], one after the next-- which happens to be a dictionary
-    ## the code within the loop, says, "from that single dictionary
-    ## print the value associated with text"
-    for catfact in r.json()["all"]:
-        print(catfact.get("text"))  # the .get() method returns NONE if key not found
-main()
-#https://github.com/csfeeser/Python/blob/dc1fa34b951491c6f939928311d91d654ce869f5/lab%20extras/catfactschallenge.md
+def name_calling():
+    name_list = []
+    for name in r.json()["all"]:
+        if name.get("user"):
+            name_list.append(f'{name["user"]["name"]["first"]} {name["user"]["name"]["last"]} is a dumb name.')
+    for x in name_list:
+        print(x)
+
+def highest_upvotes():
+    upvote_list= []
+    for x in r.json()["all"]:
+        upvote_list.append(x.get("upvotes"))
+    print("\nThe highest upvote count was:")
+    print("=============================")
+    print(max(upvote_list))
+
+def random_cat_fact():
+    fact_list= []
+    for x in r.json()["all"]:
+        fact_list.append(x.get("text"))
+    print("\nEnjoy a random cat fact!")
+    print("========================")
+    print(random.choice(fact_list))
+                             
+def UNNECESSARILY_COMPLICATED_random_cat_fact():
+    fact_list= []
+    for x in r.json()["all"]:
+        fact_list.append(x.get("text"))
+    list_count= len(fact_list) - 1
+    random_fact= random.randint(0, list_count)
+    print("\nEnjoy a random cat fact!")
+    print("========================")
+    print(fact_list[random_fact])
+
+                             
+name_calling()
+random_cat_fact()
+highest_upvotes()
+
